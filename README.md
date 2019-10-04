@@ -1,3 +1,5 @@
+# Special adapted for OpenCV 4.1 and Python 3.6+
+
 # Caffe
 
 [![Build Status](https://travis-ci.org/BVLC/caffe.svg?branch=master)](https://travis-ci.org/BVLC/caffe)
