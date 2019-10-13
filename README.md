@@ -1,5 +1,7 @@
 # Special adapted for OpenCV 4.1 and Python 3.6+
 
+Please visit https://qengineering.eu/install-caffe-on-ubuntu-18.04-with-opencv-4.1.html for a thorough installation guide
+
 # Caffe
 
 [![Build Status](https://travis-ci.org/BVLC/caffe.svg?branch=master)](https://travis-ci.org/BVLC/caffe)
