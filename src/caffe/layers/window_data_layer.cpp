@@ -21,6 +21,11 @@
 #include "caffe/util/math_functions.hpp"
 #include "caffe/util/rng.hpp"
 
+// Supporting OpenCV4
+#if (CV_MAJOR_VERSION == 4)
+#define CV_LOAD_IMAGE_COLOR cv::IMREAD_COLOR
+#endif
+
 // caffe.proto > LayerParameter > WindowDataParameter
 //   'source' field specifies the window_file
 //   'crop_size' indicates the desired warped size
@@ -290,7 +295,7 @@ void WindowDataLayer<Dtype>::load_batch(Batch<Dtype>* batch) {
           image_database_cache_[window[WindowDataLayer<Dtype>::IMAGE_INDEX]];
         cv_img = DecodeDatumToCVMat(image_cached.second, true);
       } else {
-        cv_img = cv::imread(image.first, cv::IMREAD_COLOR);
+        cv_img = cv::imread(image.first, CV_LOAD_IMAGE_COLOR);
         if (!cv_img.data) {
           LOG(ERROR) << "Could not open or find file " << image.first;
           return;
